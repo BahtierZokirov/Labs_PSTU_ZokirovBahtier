@@ -1,0 +1,48 @@
+#include <iostream>
+#include <clocale>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    const int maxS = 25;
+    int a[maxS][maxS]; 
+    int sums[maxS];             
+    int n;                          
+
+    cout << "Введите размерность матрицы (0 < N <= 25): ";
+    cin >> n;
+
+    
+    if (n <= 0 || n > maxS) {
+        cout << "Ошибка! Неверная размерность матрицы.\n";
+        return 1;
+    }
+
+    cout << "Введите элементы матрицы:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) cin >> a[i][j];
+    }
+
+    
+    for (int i = 0; i < n; i++) 
+    {
+        int sumStr = 0;
+        for (int j = 0; j < n; j++) sumStr += a[i][j];
+        sums[i] = sumStr;
+    }
+    cout << "\nМатрица:\n";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++) cout << a[i][j] << "\t";
+        cout << "\n";
+    }
+
+    cout << "\nМассив сумм строк:\n";
+    for (int i = 0; i < n; i++) cout << sums[i] << "\t";
+    cout << "\n";
+
+    return 0;
+}
