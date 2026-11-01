@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "UTF.8");
+	setlocale(LC_ALL, "Russian");
 	int max, min, maxi = 0,mini = 0, n = 7,maxS = 1, minS = 1;
 	int a[7] = { 2, 5, 5, 3, 2, 9, 9};
 	max = a[0];
